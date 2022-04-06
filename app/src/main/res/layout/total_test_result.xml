@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.test.TestResult">
+
+    <ImageView
+        android:id="@+id/congratsIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/png_clipart_multicolored_congratulations_dunottar_school_youtube_competition_s_congratulations_icon_miscellaneous_text" />
+
+    <TextView
+        android:id="@+id/SuccessText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/congratsIcon"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="Вы успешно завершили тест"
+        android:textColor="#CC000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/secon" />
+    <LinearLayout
+        android:layout_below="@+id/SuccessText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Правильных ответов:"
+            android:gravity="center"
+            android:textColor="#00C853"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:fontFamily="@font/third"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/correctAnswers"
+            android:text="Правильных ответов: 0"
+            android:textColor="#00C853"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:fontFamily="@font/third"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Неправильных ответов:"
+            android:layout_marginTop="5dp"
+            android:textColor="#DD2C00"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:fontFamily="@font/third"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/incorrectAnswers"
+            android:text="Неправильных ответов: 0"
+            android:layout_marginTop="5dp"
+            android:textColor="#DD2C00"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:fontFamily="@font/third"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startNew"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Вернуться на главный экран"
+        android:textColor="#CC000000"
+        android:background = "@drawable/round_back_white_stroke"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        app:fontFamily="@font/secon"/>
+</RelativeLayout>

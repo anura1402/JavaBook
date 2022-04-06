@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/drawable/round_back_green.xml" value="0.233" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/drawable/round_back_green1.xml" value="0.233" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/drawable/round_back_red.xml" value="0.233" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/drawable/round_back_white_stroke.xml" value="0.155" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/arrays_fragment_arrays.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/arrays_fragment_methods_array.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/arrays_fragment_one_array.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/arrays_fragment_practice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/arrays_fragment_two_array.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_basics.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_comments.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_enter.xml" value="0.5" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_install.xml" value="0.2701458173445894" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_practice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_syntax.xml" value="0.5" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/basics_fragment_types.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/cycles_fragment_cyc_operators.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/cycles_fragment_cycles.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/cycles_fragment_operators.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/cycles_fragment_practice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/cycles_fragment_solving.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/exceptions_fragment_exception_in.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/exceptions_fragment_exceptions.xml" value="0.2694746376811594" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/exceptions_fragment_info.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/exceptions_fragment_practice.xml" value="1.424342105263158" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/exceptions_fragment_processing.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/main_fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_abstact.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_incapsule.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_o_o_p.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_parent.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_polymorphism.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/oop_fragment_practice.xml" value="0.4282238442822384" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/strings_fragment_main.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/strings_fragment_methods.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/strings_fragment_practice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/strings_fragment_strings.xml" value="0.33" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/total_test.xml" value="0.40428790199081166" />
+        <entry key="..\:/Users/Anna/AndroidStudioProjects/Test/app/src/main/res/layout/total_test_result.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

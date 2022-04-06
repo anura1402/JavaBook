@@ -1,0 +1,196 @@
+<html>
+<head>
+    <title>Ознакомление с классом String</title>
+    <style>
+		img{
+			max-width: 99%;
+		}
+		body{
+			max-width:99%;
+		}
+		@font-face{
+			font-family: "secon";
+			src: url("secon.ttf");
+		}
+		.neededFont{
+			font-size: 14px;
+		}
+		h1,h2,p,label,strong{
+			font-family:"secon";
+		}
+		.del {
+		display: none;
+		}
+		.del:not(:checked) + label + * {
+		display: none;
+		}
+		/* тут редактируем вид кнопки */
+		.del:not(:checked) + label,
+		.del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: #fff;
+		background: #4e6473;
+		cursor: pointer;
+		}
+		.del:checked + label {
+		background: #e36443;
+		}
+
+
+
+
+    </style>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p>
+    Напишите Java-программу для печати суммы (сложения), умножения, вычитания, деления и остатка
+    двух чисел
+    <br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Введите первое число: 125
+    <br>&nbsp;&nbsp;Введите второе число: 24
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;125 + 24 = 149
+    <br>&nbsp;&nbsp;125 - 24 = 101
+    <br>&nbsp;&nbsp;125 х 24 = 3000
+    <br>&nbsp;&nbsp;125/24 = 5
+    <br>&nbsp;&nbsp;125 mod 24 = 5
+</p>
+
+
+<input type="checkbox" id="raz" class="del"/>
+<label for="raz" class="del">Показать решение</label>
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-class"><span class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise1</span> </span>{
+
+ <span class="hljs-function"><span class="hljs-keyword"
+                                   style="color: rgb(167, 29, 93);">public</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span class="hljs-title"
+                                                                                 style="color: rgb(121, 93, 163);">main</span><span
+         class="hljs-params">(String[] args)</span> </span>{
+  Scanner in = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+
+  System.out.print(<span class="hljs-string"
+                         style="color: rgb(223, 80, 0);">"Введите первое число: "</span>);
+  <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num1 = in.nextInt();
+
+  System.out.print(<span class="hljs-string"
+                         style="color: rgb(223, 80, 0);">"Введите второе число: "</span>);
+  <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num2 = in.nextInt();
+
+
+  System.out.println(num1 + <span class="hljs-string" style="color: rgb(223, 80, 0);">" + "</span> + num2 + <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">" ="</span>
+            + (num1 + num2));
+
+  System.out.println(num1 + <span class="hljs-string" style="color: rgb(223, 80, 0);">" - "</span> + num2 + <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">" ="</span>
+            + (num1 - num2));
+
+  System.out.println(num1 + <span class="hljs-string" style="color: rgb(223, 80, 0);">" x "</span> + num2 + <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">" ="</span>
+            + (num1 * num2));
+
+  System.out.println(num1 + <span class="hljs-string" style="color: rgb(223, 80, 0);">" / "</span> + num2 + <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">" ="</span>
+            + (num1 / num2));
+
+  System.out.println(num1 + <span class="hljs-string" style="color: rgb(223, 80, 0);">" mod "</span> + num2 + <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">" ="</span>
+            + (num1 % num2));
+ }
+}
+        </pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите первое число: <span
+            class="hljs-number">125</span>
+Введите второе число: <span class="hljs-number">24</span>
+<span class="hljs-number">125</span> + <span class="hljs-number">24</span> = <span
+                class="hljs-number">149</span>
+<span class="hljs-number">125</span> - <span class="hljs-number">24</span> = <span
+                class="hljs-number">101</span>
+<span class="hljs-number">125</span> х <span class="hljs-number">24</span> = <span
+                class="hljs-number">3000</span>
+<span class="hljs-number">125</span>/<span class="hljs-number">24</span> = <span
+                class="hljs-number">5</span>
+<span class="hljs-number">125</span> mod <span class="hljs-number">24</span> = <span
+                class="hljs-number">5</span> </pre>
+</div>
+
+<h1>Задача 2</h1>
+<p>
+    Напишите программу на Java для вычисления площади многоугольника.
+
+    <br><br> Площадь многоугольника = (n * s ^ 2) / (4 * tan (? / n))
+    <br>где n - это n-сторонний многоугольник, а s - длина стороны.
+    <br><i>Входные данные:</i>
+    <br>&nbsp;&nbsp;Введите количество сторон на многоугольнике: 7
+    <br>&nbsp;&nbsp;Введите длину одной из сторон: 6
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;Площадь составляет: 130.82084798405722
+</p>
+
+
+<input type="checkbox" id="dva" class="del"/>
+<label for="dva" class="del">Показать решение</label>
+
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-class"><span class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise2</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword"
+                                    style="color: rgb(167, 29, 93);">public</span> <span
+          class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+          class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span class="hljs-title"
+                                                                                  style="color: rgb(121, 93, 163);">main</span><span
+          class="hljs-params">(String[] args)</span> </span>{
+        Scanner input = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите количество сторон на многоугольнике: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> ns = input.nextInt();
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите длину одной из сторон: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> side = input.nextDouble();
+        System.out.print(<span class="hljs-string"
+                               style="color: rgb(223, 80, 0);">"Площадь составляет: "</span> + polygonArea(ns, side)+<span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">"\n"</span>);
+    }
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">polygonArea</span><span
+            class="hljs-params">(<span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">int</span> ns, <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> side)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> (ns * (side * side)) / (<span
+                    class="hljs-number">4.0</span> * Math.tan((Math.PI / ns)));
+    }
+}</pre>
+
+    <p>
+        Пример вывода:
+    </p>
+
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите количество сторон на многоугольнике: <span
+            class="hljs-number">7</span>
+Введите длину одной из сторон: <span class="hljs-number">6</span>
+Площадь составляет: <span class="hljs-number">130.82084798405722</span></pre>
+</div>
+</body>
+</html>

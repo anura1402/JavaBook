@@ -1,0 +1,394 @@
+<html>
+<head>
+    <title>Ознакомление с классом String</title>
+    <style>
+		img{
+			max-width: 99%;
+		}
+		body{
+			max-width:99%;
+		}
+		@font-face{
+			font-family: "secon";
+			src: url("secon.ttf");
+		}
+		.neededFont{
+			font-size: 14px;
+		}
+		h1,h2,p,label,strong{
+			font-family:"secon";
+		}
+		.del {
+		display: none;
+		}
+		.del:not(:checked) + label + * {
+		display: none;
+		}
+		/* тут редактируем вид кнопки */
+		.del:not(:checked) + label,
+		.del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: #fff;
+		background: #4e6473;
+		cursor: pointer;
+		}
+		.del:checked + label {
+		background: #e36443;
+		}
+    </style>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p>
+    Создайте класс, который описывает вектор (в трёхмерном пространстве).
+    <br>У него должны быть:
+    <br>· конструктор с параметрами в виде списка координат <i>x, y, z</i>
+    <br>· метод, вычисляющий длину вектора. Корень можно посчитать с помощью Math.sqrt():
+<p align=center>
+    <img src="https://habrastorage.org/getpro/habr/formulas/25b/ef8/2fe/25bef82fec1aa4a4c990cb621fdf0f3d.svg"
+         alt="$\sqrt{x^2 + y^2 + z^2}$" data-tex="display">
+</p>
+<p>
+    · метод, вычисляющий скалярное произведение:
+<p align=center>
+    <img src="https://habrastorage.org/getpro/habr/formulas/9ff/a7b/dce/9ffa7bdce2c3f347e613888391d1a49f.svg"
+         alt="$x_1x_2 + y_1y_2 + z_1z_2$" data-tex="display">
+</p>
+<p>
+    · метод, вычисляющий векторное произведение с другим вектором:
+<p align=center>
+    <img src="https://habrastorage.org/getpro/habr/formulas/5ab/fc8/8f3/5abfc88f36fae69c30dc4084fab8c669.svg"
+         alt="$(y_1z_2 - z_1y_2, z_1x_2 - x_1z_2, x_1y_2 - y_1x_2)$" data-tex="display">
+</p>
+<p>
+    · метод, вычисляющий угол между векторами (или косинус угла): косинус угла между векторами
+    равен скалярному произведению векторов, деленному на произведение модулей (длин) векторов:
+<p align=center>
+    <img src="https://habrastorage.org/getpro/habr/formulas/d88/c85/c85/d88c85c85449c54b0ef980d3fc56154c.svg"
+         alt="$\frac{(a,b)}{|a| \cdot |b|}$" data-tex="display">
+</p>
+<p>
+    · методы для суммы и разности:
+<p align=center>
+    <img src="https://habrastorage.org/getpro/habr/formulas/b1d/453/fff/b1d453fffac53874ba17069edadd2988.svg"
+         alt="$(x_1 + x_2, y_1 + y_2, z_1 + z_2)$" data-tex="display">
+    <img src="https://habrastorage.org/getpro/habr/formulas/bb6/efd/c23/bb6efdc23bed24c096899f59d100bd0a.svg"
+         alt="$(x_1 - x_2, y_1 - y_2, z_1 - z_2)$" data-tex="display">
+</p>
+<p>
+    · статический метод, который принимает целое число N, и возвращает массив случайных векторов размером N.
+</p>
+
+
+<input type="checkbox" id="raz" class="del"/>
+<label for="raz" class="del">Показать решение</label>
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-class"><span class="hljs-keyword"
+                                         style="color: rgb(167, 29, 93);">class</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">Vector</span> </span>{
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// Три приватных поля</span>
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">private</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> x;
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">private</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> y;
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">private</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> z;
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// С тремя параметрами</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">Vector</span><span
+            class="hljs-params">(<span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">double</span> x, <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> y, <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> z)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">this</span>.x = x;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">this</span>.y = y;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">this</span>.z = z;
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// Длина вектора. Корень из суммы квадратов</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">length</span><span
+            class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> Math.sqrt(x * x + y * y + z * z);
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// метод, вычисляющий скалярное произведение</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">scalarProduct</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> x * vector.x + y * vector.y + z * vector.z;
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// метод, вычисляющий векторное произведение</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> Vector <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">crossProduct</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(
+                y * vector.z - z * vector.y,
+                z * vector.x - x * vector.z,
+                x * vector.y - y * vector.x);
+    }
+
+    <span class="hljs-comment"
+          style="color: rgb(150, 152, 150);">// Косинус между двумя векторами</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">cos</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-comment" style="color: rgb(150, 152, 150);">// Для вычисления длины и произведения используются</span>
+        <span class="hljs-comment"
+              style="color: rgb(150, 152, 150);">//методы multiply и length</span>
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> scalarProduct(vector) / (length() * vector.length());
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> Vector <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">add</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(
+                x + vector.x,
+                y + vector.y,
+                z + vector.z
+        );
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> Vector <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">subtract</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(
+                x - vector.x,
+                y - vector.y,
+                z - vector.z
+        );
+    }
+
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> Vector[] generate(<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> n){
+        Vector[] vectors = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector[n];
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span>(<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i =<span
+                    class="hljs-number">0</span>; i &lt; n; i++){
+            vectors[i] = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(Math.random(), Math.random(), Math.random());
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> vectors;
+    }
+
+    <span class="hljs-meta" style="color: rgb(150, 152, 150);">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> String <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">toString</span><span
+            class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">"Vector{"</span> +
+                <span class="hljs-string" style="color: rgb(223, 80, 0);">"x="</span> + x +
+                <span class="hljs-string" style="color: rgb(223, 80, 0);">", y="</span> + y +
+                <span class="hljs-string" style="color: rgb(223, 80, 0);">", z="</span> + z +
+                <span class="hljs-string" style="color: rgb(223, 80, 0);">'}'</span>;
+    }
+}</pre>
+    <p>
+        Использовать этот класс можно так::
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-class"><span class="hljs-keyword"
+                                     style="color: rgb(167, 29, 93);">class</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">Main</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+            class="hljs-params">(String[] args)</span> </span>{
+        Vector[] vectors = Vector.generate(<span class="hljs-number">10</span>);
+        System.out.println(vectors[<span class="hljs-number">0</span>]);
+        System.out.println(vectors[<span class="hljs-number">1</span>]);
+        System.out.println(vectors[<span class="hljs-number">0</span>].length());
+        System.out.println(vectors[<span class="hljs-number">0</span>].scalarProduct(vectors[<span
+                class="hljs-number">1</span>]));
+        System.out.println(vectors[<span class="hljs-number">0</span>].crossProduct(vectors[<span
+                class="hljs-number">1</span>]));
+        System.out.println(vectors[<span class="hljs-number">0</span>].cos(vectors[<span
+                class="hljs-number">1</span>]));
+        System.out.println(vectors[<span class="hljs-number">0</span>].add(vectors[<span
+                class="hljs-number">1</span>]));
+        System.out.println(vectors[<span class="hljs-number">0</span>].subtract(vectors[<span
+                class="hljs-number">1</span>]));
+    }
+}</pre>
+    <p>
+        Результат работы:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Vector{x=<span
+            class="hljs-number">0.8031071132889092</span>, y=<span class="hljs-number">0.5714406705864902</span>, z=<span
+            class="hljs-number">0.8441160341866055</span>}
+Vector{x=<span class="hljs-number">0.28787839774307633</span>, y=<span class="hljs-number">0.7265188186305341</span>, z=<span
+                class="hljs-number">0.8433609583155103</span>}
+<span class="hljs-number">1.2977123543322322</span>
+<span class="hljs-number">1.3582540974227193</span>
+Vector{x=-<span class="hljs-number">0.131335432378064</span>, y=-<span class="hljs-number">0.4343064132624577</span>, z=<span
+                class="hljs-number">0.4189670065267689</span>}
+<span class="hljs-number">0.9103181850858539</span>
+Vector{x=<span class="hljs-number">1.0909855110319855</span>, y=<span class="hljs-number">1.2979594892170243</span>, z=<span
+                class="hljs-number">1.6874769925021158</span>}
+Vector{x=<span class="hljs-number">0.5152287155458328</span>, y=-<span class="hljs-number">0.15507814804404396</span>, z=<span
+                class="hljs-number">7.550758710952454E-4</span>}</pre>
+    <p>
+        Это решение можно обобщить и написать класс Vector для произвольной размерности:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-class"><span class="hljs-keyword"
+                                     style="color: rgb(167, 29, 93);">class</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">Vector</span> </span>{
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// теперь не три координаты, а массив координат</span>
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">private</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> values[];
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">Vector</span><span
+            class="hljs-params">(<span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">double</span>[] values)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">this</span>.values = values;
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// Длина вектора. Корень из суммы квадратов</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">length</span><span
+            class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> sum = <span
+                class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; values.length; i++) {
+            sum += values[i] * values[i];
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> Math.sqrt(sum);
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// метод, вычисляющий скалярное произведение</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">scalarProduct</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> res = <span
+                class="hljs-number">0</span>;
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; values.length; i++) {
+            res += values[i] * vector.values[i];
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> res;
+    }
+
+    <span class="hljs-comment"
+          style="color: rgb(150, 152, 150);">// для многомерных не определено</span>
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">//    public double crossProduct(Vector vector) {</span>
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">//        </span>
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">//    }</span>
+
+    <span class="hljs-comment"
+          style="color: rgb(150, 152, 150);">// Косинус между двумя векторами</span>
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">cos</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> scalarProduct(vector) / (length() * vector.length());
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> Vector <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">add</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[] another = <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[values.length];
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; values.length; i++) {
+            another[i] = values[i] + vector.values[i];
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(another);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> Vector <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">subtract</span><span
+            class="hljs-params">(Vector vector)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[] another = <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[values.length];
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; values.length; i++) {
+            another[i] = values[i] - vector.values[i];
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(another);
+    }
+
+    <span class="hljs-comment" style="color: rgb(150, 152, 150);">// Вспомогательный метод</span>
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">private</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[] generateRandomArray(<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> length) {
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[] array = <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[length];
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; array.length; i++) {
+            array[i] = Math.random();
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> array;
+    }
+
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> Vector[] generate(<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> n, <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> dimension) {
+        Vector[] vectors = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector[n];
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">0</span>; i &lt; n; i++) {
+            vectors[i] = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Vector(generateRandomArray(dimension));
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> vectors;
+    }
+}</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<html>
+<head>
+    <title>Ознакомление с классом String</title>
+    <style>
+		img{
+			max-width: 99%;
+		}
+		body{
+			max-width:99%;
+		}
+		@font-face{
+			font-family: "secon";
+			src: url("secon.ttf");
+		}
+		.neededFont{
+			font-size: 14px;
+		}
+		h1,h2,p,label,strong{
+			font-family:"secon";
+		}
+		.del {
+		display: none;
+		}
+		.del:not(:checked) + label + * {
+		display: none;
+		}
+		/* тут редактируем вид кнопки */
+		.del:not(:checked) + label,
+		.del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: #fff;
+		background: #4e6473;
+		cursor: pointer;
+		}
+		.del:checked + label {
+		background: #e36443;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p>
+    Напишите программу на Java, чтобы проверить, появляется ли 10 как первый или последний элемент
+    массива целых чисел. Длина массива должна быть больше или равна 2
+    <br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Массив: [10,&nbsp;-20,&nbsp;0,&nbsp;30,&nbsp;40,&nbsp;60,&nbsp;10]
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;true
+</p>
+
+
+<input type="checkbox" id="raz" class="del"/>
+<label for="raz" class="del">Показать решение</label>
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.lang.*;
+ <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span class="hljs-class"><span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise1</span> </span>{
+ <span class="hljs-function"><span class="hljs-keyword"
+                                   style="color: rgb(167, 29, 93);">public</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span class="hljs-title"
+                                                                                 style="color: rgb(121, 93, 163);">main</span><span
+         class="hljs-params">(String[] args)</span>
+ </span>{
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>[] num_array = {<span
+                    class="hljs-number">10</span>, -<span class="hljs-number">20</span>, <span
+                    class="hljs-number">0</span>, <span class="hljs-number">30</span>, <span
+                    class="hljs-number">40</span>, <span class="hljs-number">60</span>, <span
+                    class="hljs-number">10</span>};
+    System.out.println((num_array[<span class="hljs-number">0</span>] == <span class="hljs-number">10</span> || num_array[num_array.length-<span
+                    class="hljs-number">1</span>] == <span class="hljs-number">10</span>));
+ }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">true</span></pre>
+</div>
+
+<h1>Задача 2</h1>
+<p>
+    Напишите программу на Java, чтобы умножить соответствующие элементы двух массивов целых чисел.
+
+    <br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Массив1: [1, 3, -5, 4]
+    <br>&nbsp;&nbsp;Массив2: [1, 4, -5, -2]
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;1 12 25 -8
+</p>
+
+
+<input type="checkbox" id="dva" class="del"/>
+<label for="dva" class="del">Показать решение</label>
+
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.*;
+ <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span class="hljs-class"><span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise2</span> </span>{
+     <span class="hljs-function"><span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">public</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+             class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+             class="hljs-params">(String[] args)</span></span>{
+	   String result = <span class="hljs-string" style="color: rgb(223, 80, 0);">""</span>;
+	   <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>[] left_array = {<span
+                    class="hljs-number">1</span>, <span class="hljs-number">3</span>, -<span
+                    class="hljs-number">5</span>, <span class="hljs-number">4</span>};
+	   <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>[] right_array = {<span
+                    class="hljs-number">1</span>, <span class="hljs-number">4</span>, -<span
+                    class="hljs-number">5</span>, -<span class="hljs-number">2</span>};
+	   System.out.println(<span class="hljs-string"
+                                style="color: rgb(223, 80, 0);">"\nМассив1: "</span>+Arrays.toString(left_array));
+	   System.out.println(<span class="hljs-string"
+                                style="color: rgb(223, 80, 0);">"\nМассив2: "</span>+Arrays.toString(right_array));
+       <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                    class="hljs-number">0</span>; i &lt; left_array.length; i++) {
+				<span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num1 = left_array[i];
+				<span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num2 = right_array[i];
+				result += Integer.toString(num1 * num2) + <span class="hljs-string"
+                                                                style="color: rgb(223, 80, 0);">" "</span>;
+			}
+		System.out.println(<span class="hljs-string"
+                                 style="color: rgb(223, 80, 0);">"\nРезультат: "</span>+result);
+	 }
+}</pre>
+
+    <p>
+        Пример вывода:
+    </p>
+
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Массив<span
+            class="hljs-number">1</span>: [<span class="hljs-number">1</span>, <span
+            class="hljs-number">3</span>, -<span class="hljs-number">5</span>, <span
+            class="hljs-number">4</span>]
+
+Массив<span class="hljs-number">2</span>: [<span class="hljs-number">1</span>, <span
+                class="hljs-number">4</span>, -<span class="hljs-number">5</span>, -<span
+                class="hljs-number">2</span>]
+
+Результат: <span class="hljs-number">1</span> <span class="hljs-number">12</span> <span
+                class="hljs-number">25</span> -<span class="hljs-number">8</span> </pre>
+</div>
+
+<h1>Задача 3</h1>
+<p>
+    Заполните массив случайным числами от -10 до 10 и выведите максимальное, минимальное и среднее
+    значение.
+
+    <br><i>Пример работы</i>
+    <br>&nbsp;&nbsp;Массив: [-4, -6, 6, -9, -6]
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;-4, -6, 6, -9, -6
+    <br>&nbsp;&nbsp;max = 6
+    <br>&nbsp;&nbsp;min = -9
+    <br>&nbsp;&nbsp;avg = -3.8
+</p>
+
+
+<input type="checkbox" id="tri" class="del"/>
+<label for="tri" class="del">Показать решение</label>
+
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.lang.*;
+ <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span class="hljs-class"><span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise3</span> </span>{
+	<span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+            class="hljs-params">(String[] args)</span> </span>{
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> minA = -<span
+                    class="hljs-number">10</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> maxA = <span
+                    class="hljs-number">10</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[] array = <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span>[<span
+                    class="hljs-number">5</span>];
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                    class="hljs-number">0</span>; i &lt; array.length; i++) {
+            array[i] = rnd(minA,maxA);
+        }
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> max = array[<span
+                    class="hljs-number">0</span>]; <span class="hljs-comment"
+                                                         style="color: rgb(150, 152, 150);">// Массив не должен быть пустым</span>
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> min = array[<span
+                    class="hljs-number">0</span>];
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">double</span> avg = <span
+                    class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                    class="hljs-number">0</span>; i &lt; array.length; i++) {
+            System.out.print(array[i]+<span class="hljs-string"
+                                            style="color: rgb(223, 80, 0);">" "</span>);
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span>(max &lt; array[i])
+                max = array[i];
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span>(min &gt; array[i])
+                min = array[i];
+            avg += array[i]/array.length;
+        }
+        System.out.println();
+        System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"max = "</span> + max);
+        System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"min = "</span> + min);
+        System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"avg = "</span> + avg);
+    }
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">rnd</span><span
+            class="hljs-params">(<span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">int</span> min, <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> max)</span>
+    </span>{
+	max -= min;
+	<span class="hljs-keyword" style="color: rgb(167, 29, 93);">return</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>) (Math.random() * ++max) + min;
+    }
+}</pre>
+
+    <p>
+        Пример вывода:
+    </p>
+
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">-<span
+            class="hljs-number">4</span>, -<span class="hljs-number">6</span>, <span
+            class="hljs-number">6</span>, -<span class="hljs-number">9</span>, -<span
+            class="hljs-number">6</span>
+max = <span class="hljs-number">6</span>
+min = -<span class="hljs-number">9</span>
+avg = -<span class="hljs-number">3.8</span></pre>
+</div>
+<h1>Задача 4</h1>
+<p>
+    Создать таблицу умножения(Пифагора) при помощи двумерного массива
+
+    <br><i>Ожидаемый результат :</i>
+    <br>1   2   3   4   5   6   7   8   9  10
+    <br>2   4   6   8  10  12  14  16  18  20
+    <br>3   6   9  12  15  18  21  24  27  30
+    <br>4   8  12  16  20  24  28  32  36  40
+    <br>5  10  15  20  25  30  35  40  45  50
+    <br>6  12  18  24  30  36  42  48  54  60
+    <br>7  14  21  28  35  42  49  56  63  70
+    <br>8  16  24  32  40  48  56  64  72  80
+    <br>9  18  27  36  45  54  63  72  81  90
+    <br>10  20  30  40  50  60  70  80  90 100
+</p>
+
+
+<input type="checkbox" id="4" class="del"/>
+<label for="4" class="del">Показать решение</label>
+
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-class"><span class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise4</span>
+</span>{
+ <span class="hljs-function"><span class="hljs-keyword"
+                                   style="color: rgb(167, 29, 93);">public</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+         class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span class="hljs-title"
+                                                                                 style="color: rgb(121, 93, 163);">main</span><span
+         class="hljs-params">( String[] args )</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> n = <span
+                    class="hljs-number">10</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> m = <span
+                    class="hljs-number">10</span>;
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>[][] arr = <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span>[n+<span
+                    class="hljs-number">1</span>][m+<span class="hljs-number">1</span>];
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                    class="hljs-number">1</span>, j = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> ( <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> k = <span
+                    class="hljs-number">0</span>; k &lt; n * m; ++k, ++j ) {
+
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span> ( k != <span
+                    class="hljs-number">0</span> &amp;&amp; k % m == <span
+                    class="hljs-number">0</span> ) {
+                ++i;
+                j = <span class="hljs-number">1</span>;
+                System.out.println();
+            }
+
+            arr[ i ][ j ] = i * j;
+            System.out.format( <span class="hljs-string"
+                                     style="color: rgb(223, 80, 0);">"%4d"</span>, arr[ i ][ j ] );
+        }
+    }
+}</pre>
+
+    <p>
+        Пример вывода:
+    </p>
+
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">   <span
+            class="hljs-number">1</span>   <span class="hljs-number">2</span>   <span
+            class="hljs-number">3</span>   <span class="hljs-number">4</span>   <span
+            class="hljs-number">5</span>   <span class="hljs-number">6</span>   <span
+            class="hljs-number">7</span>   <span class="hljs-number">8</span>   <span
+            class="hljs-number">9</span>  <span class="hljs-number">10</span>
+   <span class="hljs-number">2</span>   <span class="hljs-number">4</span>   <span
+                class="hljs-number">6</span>   <span class="hljs-number">8</span>  <span
+                class="hljs-number">10</span>  <span class="hljs-number">12</span>  <span
+                class="hljs-number">14</span>  <span class="hljs-number">16</span>  <span
+                class="hljs-number">18</span>  <span class="hljs-number">20</span>
+   <span class="hljs-number">3</span>   <span class="hljs-number">6</span>   <span
+                class="hljs-number">9</span>  <span class="hljs-number">12</span>  <span
+                class="hljs-number">15</span>  <span class="hljs-number">18</span>  <span
+                class="hljs-number">21</span>  <span class="hljs-number">24</span>  <span
+                class="hljs-number">27</span>  <span class="hljs-number">30</span>
+   <span class="hljs-number">4</span>   <span class="hljs-number">8</span>  <span
+                class="hljs-number">12</span>  <span class="hljs-number">16</span>  <span
+                class="hljs-number">20</span>  <span class="hljs-number">24</span>  <span
+                class="hljs-number">28</span>  <span class="hljs-number">32</span>  <span
+                class="hljs-number">36</span>  <span class="hljs-number">40</span>
+   <span class="hljs-number">5</span>  <span class="hljs-number">10</span>  <span
+                class="hljs-number">15</span>  <span class="hljs-number">20</span>  <span
+                class="hljs-number">25</span>  <span class="hljs-number">30</span>  <span
+                class="hljs-number">35</span>  <span class="hljs-number">40</span>  <span
+                class="hljs-number">45</span>  <span class="hljs-number">50</span>
+   <span class="hljs-number">6</span>  <span class="hljs-number">12</span>  <span
+                class="hljs-number">18</span>  <span class="hljs-number">24</span>  <span
+                class="hljs-number">30</span>  <span class="hljs-number">36</span>  <span
+                class="hljs-number">42</span>  <span class="hljs-number">48</span>  <span
+                class="hljs-number">54</span>  <span class="hljs-number">60</span>
+   <span class="hljs-number">7</span>  <span class="hljs-number">14</span>  <span
+                class="hljs-number">21</span>  <span class="hljs-number">28</span>  <span
+                class="hljs-number">35</span>  <span class="hljs-number">42</span>  <span
+                class="hljs-number">49</span>  <span class="hljs-number">56</span>  <span
+                class="hljs-number">63</span>  <span class="hljs-number">70</span>
+   <span class="hljs-number">8</span>  <span class="hljs-number">16</span>  <span
+                class="hljs-number">24</span>  <span class="hljs-number">32</span>  <span
+                class="hljs-number">40</span>  <span class="hljs-number">48</span>  <span
+                class="hljs-number">56</span>  <span class="hljs-number">64</span>  <span
+                class="hljs-number">72</span>  <span class="hljs-number">80</span>
+   <span class="hljs-number">9</span>  <span class="hljs-number">18</span>  <span
+                class="hljs-number">27</span>  <span class="hljs-number">36</span>  <span
+                class="hljs-number">45</span>  <span class="hljs-number">54</span>  <span
+                class="hljs-number">63</span>  <span class="hljs-number">72</span>  <span
+                class="hljs-number">81</span>  <span class="hljs-number">90</span>
+  <span class="hljs-number">10</span>  <span class="hljs-number">20</span>  <span
+                class="hljs-number">30</span>  <span class="hljs-number">40</span>  <span
+                class="hljs-number">50</span>  <span class="hljs-number">60</span>  <span
+                class="hljs-number">70</span>  <span class="hljs-number">80</span>  <span
+                class="hljs-number">90</span> <span class="hljs-number">100</span></pre>
+</div>
+</body>
+</html>

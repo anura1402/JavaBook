@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.anura.javabook">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icons8_java_256"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test">
+        <activity
+            android:name=".ui.home.test.TestResult"
+            android:exported="false" />
+        <activity android:name=".ui.home.test.Test" />
+        <activity android:name=".basics.Basics" />
+        <activity android:name=".basics.Enter" />
+        <activity android:name=".basics.Comments" />
+        <activity android:name=".basics.Types" />
+        <activity android:name=".basics.Syntax" />
+        <activity android:name=".basics.Install" />
+        <activity android:name=".basics.PracticeBasic" />
+        <activity android:name=".strings.Strings" />
+        <activity android:name=".strings.Main" />
+        <activity android:name=".strings.Methods" />
+        <activity android:name=".strings.PracticeString" />
+        <activity android:name=".oop.OOP" />
+        <activity android:name=".oop.Abstract" />
+        <activity android:name=".oop.Polymorphism" />
+        <activity android:name=".oop.Parent" />
+        <activity android:name=".oop.Incapsule" />
+        <activity android:name=".oop.PracticeOOP" />
+        <activity android:name=".exceptions.Exceptions" />
+        <activity android:name=".exceptions.ExceptionIn" />
+        <activity android:name=".exceptions.Info" />
+        <activity android:name=".exceptions.Processing" />
+        <activity android:name=".exceptions.PracticeException" />
+        <activity android:name=".cycles.Cycles" />
+        <activity android:name=".cycles.CycOperators" />
+        <activity android:name=".cycles.Operators" />
+        <activity android:name=".cycles.Solving" />
+        <activity android:name=".cycles.PracticeCycle" />
+        <activity android:name=".arrays.Arrays" />
+        <activity android:name=".arrays.MethodsArray" />
+        <activity android:name=".arrays.OneArray" />
+        <activity android:name=".arrays.TwoArray" />
+        <activity android:name=".arrays.PracticeArray" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Test.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

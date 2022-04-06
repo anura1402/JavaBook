@@ -1,0 +1,177 @@
+<html>
+<head>
+    <title>Ознакомление с классом String</title>
+    <style>
+		img{
+			max-width: 99%;
+		}
+		body{
+			max-width:99%;
+		}
+		@font-face{
+			font-family: "secon";
+			src: url("secon.ttf");
+		}
+		.neededFont{
+			font-size: 14px;
+		}
+		h1,h2,p,label,strong{
+			font-family:"secon";
+		}
+		.del {
+		display: none;
+		}
+		.del:not(:checked) + label + * {
+		display: none;
+		}
+		/* тут редактируем вид кнопки */
+		.del:not(:checked) + label,
+		.del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: #fff;
+		background: #4e6473;
+		cursor: pointer;
+		}
+		.del:checked + label {
+		background: #e36443;
+		}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p>
+    Напишите Java-программу "Калькулятор", выдающий ошибки при неправильном вводе числа, операции
+    или деления на ноль
+    <br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Введите число: 5
+    <br>&nbsp;&nbsp;Введите число: 0
+    <br>&nbsp;&nbsp;Выберите операцию + - * / : /
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;Деление на ноль
+
+    <br><br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Введите число: 5
+    <br>&nbsp;&nbsp;Введите число: h
+    <br>&nbsp;&nbsp;Выберите операцию + - * / : +
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;Неправильный ввод
+    <br><br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Введите число: 5
+    <br>&nbsp;&nbsp;Введите число: 3
+    <br>&nbsp;&nbsp;Выберите операцию + - * / : h
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp; Неправильная операция
+</p>
+
+
+<input type="checkbox" id="raz" class="del"/>
+<label for="raz" class="del">Показать решение</label>
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.InputMismatchException;
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-class"><span class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise1</span></span>{
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">final</span> String FORMAT = <span
+                    class="hljs-string"
+                    style="color: rgb(223, 80, 0);">"Результат операции: %d"</span>;
+    <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">final</span> String ENTER_NUMBER = <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">"Введите число: "</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+            class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num1 = <span
+                    class="hljs-number">0</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> num2 = <span
+                    class="hljs-number">0</span>;
+        Scanner scanner = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">char</span> operation = <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">'0'</span>;
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">try</span> {
+            System.out.print(ENTER_NUMBER);
+            num1 = scanner.nextInt();
+            System.out.print(ENTER_NUMBER);
+            num2 = scanner.nextInt();
+            System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Выберите операцию + - * / : "</span>);
+            operation = scanner.next().charAt(<span class="hljs-number">0</span>);
+        } <span class="hljs-keyword" style="color: rgb(167, 29, 93);">catch</span> (InputMismatchException e) {
+            System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Неправильный ввод"</span>);
+            System.exit(<span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">switch</span> (operation) {
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">case</span> <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">'+'</span>:
+                System.out.printf(FORMAT, num1 + num2);
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">break</span>;
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">case</span> <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">'-'</span>:
+                System.out.printf(FORMAT, num1 - num2);
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">break</span>;
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">case</span> <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">'*'</span>:
+                System.out.printf(FORMAT, num1 * num2);
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">break</span>;
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">case</span> <span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">'/'</span>:
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">try</span> {
+                    System.out.printf(FORMAT, num1 / num2);
+                } <span class="hljs-keyword" style="color: rgb(167, 29, 93);">catch</span> (ArithmeticException e) {
+                    System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Деление на ноль"</span>);
+                }
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">break</span>;
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">default</span>:
+                System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Неправильная операция"</span>);
+                <span class="hljs-keyword" style="color: rgb(167, 29, 93);">break</span>;
+        }
+    }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите число: <span
+            class="hljs-number">5</span>
+Введите число: <span class="hljs-number">0</span>
+Выберите операцию + - * / : /
+Деление на ноль</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите число: h
+Неправильный ввод</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите число: <span
+            class="hljs-number">5</span>
+Введите число: <span class="hljs-number">1</span>
+Выберите операцию + - * / : g
+Неправильная операция</pre>
+</div>
+
+</body>
+</html>

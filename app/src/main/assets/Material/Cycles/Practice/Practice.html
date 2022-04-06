@@ -1,0 +1,350 @@
+<html>
+<head>
+    <title>Ознакомление с классом String</title>
+    <style>
+		img{
+			max-width: 99%;
+		}
+		body{
+			max-width:99%;
+		}
+		@font-face{
+			font-family: "secon";
+			src: url("secon.ttf");
+		}
+		.neededFont{
+			font-size: 14px;
+		}
+		h1,h2,p,label,strong{
+			font-family:"secon";
+		}
+		.del {
+		display: none;
+		}
+		.del:not(:checked) + label + * {
+		display: none;
+		}
+		/* тут редактируем вид кнопки */
+		.del:not(:checked) + label,
+		.del:checked + label {
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 2px;
+		color: #fff;
+		background: #4e6473;
+		cursor: pointer;
+		}
+		.del:checked + label {
+		background: #e36443;
+
+
+    </style>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p>
+    Напишите программу на Java, которая принимает число и проверяет, является ли число четным или
+    нет. Печатает 1, если число четное, или 0, если число нечетное.
+    <br><i>Тестовые данные:</i>
+    <br>&nbsp;&nbsp;Введите число: 20
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;1
+</p>
+
+
+<input type="checkbox" id="raz" class="del"/>
+<label for="raz" class="del">Показать решение</label>
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.*;
+ <span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span class="hljs-class"><span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">class</span> <span
+                    class="hljs-title" style="color: rgb(121, 93, 163);">Exercise1</span> </span>{
+     <span class="hljs-function"><span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">public</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+             class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+             class="hljs-params">(String[] args)</span></span>{
+	 Scanner in = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+	 System.out.print(<span class="hljs-string"
+                            style="color: rgb(223, 80, 0);">"Введите число: "</span>);
+     <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> n = in.nextInt();
+            <span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span> (n % <span
+                    class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                System.out.println(<span class="hljs-number">1</span>);
+               }
+			<span class="hljs-keyword" style="color: rgb(167, 29, 93);">else</span> {
+                System.out.println(<span class="hljs-number">0</span>);
+              }
+     }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите число: <span
+            class="hljs-number">20</span>
+<span class="hljs-number">1</span></pre>
+</div>
+
+<h1>Задача 2</h1>
+<p>
+    Напишите программу на Java для печати чисел от 1 до 100, которые делятся на 3, 5 и на оба этих
+    числа
+
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp; Делятся на 3:
+    <br>&nbsp;&nbsp;3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57
+    , 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99,
+    <br>&nbsp;&nbsp;Делятся на 5:
+    <br>&nbsp;&nbsp;5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
+    95,
+    <br>&nbsp;&nbsp;Делятся на 3 и 5:
+    <br>&nbsp;&nbsp;15, 30, 45, 60, 75, 90,
+</p>
+
+
+<input type="checkbox" id="dva" class="del"/>
+<label for="dva" class="del">Показать решение</label>
+
+<div>
+		<pre class="hljs neededFont"
+             style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-class"><span class="hljs-keyword"
+                                         style="color: rgb(167, 29, 93);">class</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">Exercise2</span> </span>{
+    	<span class="hljs-function"><span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+                class="hljs-params">(String args[])</span> </span>{
+		System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"\nДелятся на 3: "</span>);
+		<span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i=<span
+                    class="hljs-number">1</span>; i&lt;<span class="hljs-number">100</span>; i++) {
+			<span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span> (i%<span
+                    class="hljs-number">3</span>==<span class="hljs-number">0</span>)
+			System.out.print(i +<span class="hljs-string"
+                                      style="color: rgb(223, 80, 0);">", "</span>);
+		}
+
+		System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"\n\nДелятся на 5: "</span>);
+		<span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i=<span
+                    class="hljs-number">1</span>; i&lt;<span class="hljs-number">100</span>; i++) {
+			<span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span> (i%<span
+                    class="hljs-number">5</span>==<span class="hljs-number">0</span>) System.out.print(i +<span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">", "</span>);
+		}
+
+		System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"\n\nДелятся на 3 &amp; 5: "</span>);
+		<span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span> (<span
+                    class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i=<span
+                    class="hljs-number">1</span>; i&lt;<span class="hljs-number">100</span>; i++) {
+			<span class="hljs-keyword" style="color: rgb(167, 29, 93);">if</span> (i%<span
+                    class="hljs-number">3</span>==<span
+                    class="hljs-number">0</span> &amp;&amp; i%<span
+                    class="hljs-number">5</span>==<span class="hljs-number">0</span>) System.out.print(i +<span
+                    class="hljs-string" style="color: rgb(223, 80, 0);">", "</span>);
+		}
+		System.out.println(<span class="hljs-string" style="color: rgb(223, 80, 0);">"\n"</span>);
+  }
+}</pre>
+
+    <p>
+        Пример вывода:
+    </p>
+
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Делятся на <span
+            class="hljs-number">3</span>:
+<span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span
+                class="hljs-number">9</span>, <span class="hljs-number">12</span>, <span
+                class="hljs-number">15</span>, <span class="hljs-number">18</span>, <span
+                class="hljs-number">21</span>, <span class="hljs-number">24</span>, <span
+                class="hljs-number">27</span>, <span class="hljs-number">30</span>, <span
+                class="hljs-number">33</span>, <span class="hljs-number">36</span>, <span
+                class="hljs-number">39</span>, <span class="hljs-number">42</span>, <span
+                class="hljs-number">45</span>, <span class="hljs-number">48</span>, <span
+                class="hljs-number">51</span>, <span class="hljs-number">54</span>, <span
+                class="hljs-number">57</span>
+, <span class="hljs-number">60</span>, <span class="hljs-number">63</span>, <span
+                class="hljs-number">66</span>, <span class="hljs-number">69</span>, <span
+                class="hljs-number">72</span>, <span class="hljs-number">75</span>, <span
+                class="hljs-number">78</span>, <span class="hljs-number">81</span>, <span
+                class="hljs-number">84</span>, <span class="hljs-number">87</span>, <span
+                class="hljs-number">90</span>, <span class="hljs-number">93</span>, <span
+                class="hljs-number">96</span>, <span class="hljs-number">99</span>,
+
+Делятся на <span class="hljs-number">5</span>:
+<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span
+                class="hljs-number">20</span>, <span class="hljs-number">25</span>, <span
+                class="hljs-number">30</span>, <span class="hljs-number">35</span>, <span
+                class="hljs-number">40</span>, <span class="hljs-number">45</span>, <span
+                class="hljs-number">50</span>, <span class="hljs-number">55</span>, <span
+                class="hljs-number">60</span>, <span class="hljs-number">65</span>, <span
+                class="hljs-number">70</span>, <span class="hljs-number">75</span>, <span
+                class="hljs-number">80</span>, <span class="hljs-number">85</span>, <span
+                class="hljs-number">90</span>,
+<span class="hljs-number">95</span>,
+
+Делятся на <span class="hljs-number">3</span> и <span class="hljs-number">5</span>:
+<span class="hljs-number">15</span>, <span class="hljs-number">30</span>, <span class="hljs-number">45</span>, <span
+                class="hljs-number">60</span>, <span class="hljs-number">75</span>, <span
+                class="hljs-number">90</span>,</pre>
+</div>
+
+<h1>Задача 3</h1>
+<p>
+    За каждый месяц банк начисляет к сумме вклада 7% от суммы. Напишите консольную программу, в
+    которую пользователь вводит сумму вклада и количество месяцев. А банк вычисляет конечную сумму
+    вклада с учетом начисления процентов за каждый месяц.
+    <br><i>Вводные данные:</i>
+    <br>&nbsp;&nbsp;Введите сумму вклада: 100
+    <br>&nbsp;&nbsp;Введите срок вклада в месяцах: 1
+    <br><i>Ожидаемый результат :</i>
+    <br>&nbsp;&nbsp;После 1 месяцев сумма вклада составит 107,000000
+</p>
+
+<h2>For</h2>
+<input type="checkbox" id="tri" class="del"/>
+<label for="tri" class="del">Показать решение</label>
+<div>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-class"><span class="hljs-keyword"
+                                         style="color: rgb(167, 29, 93);">class</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">Exercise3</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+            class="hljs-params">(String[] args)</span> </span>{
+
+        Scanner in = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите сумму вклада: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">float</span> sum = in.nextFloat();
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите срок вклада в месяцах: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> period = in.nextInt();
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">for</span>(<span
+                class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = <span
+                class="hljs-number">1</span>; i &lt;= period; i++){
+            sum += sum * <span class="hljs-number">0.07</span>;
+        }
+        System.out.printf(<span class="hljs-string" style="color: rgb(223, 80, 0);">"После %d месяцев сумма вклада составит %f"</span>, period, sum);
+        in.close();
+    }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите сумму вклада: <span
+            class="hljs-number">100</span>
+Введите срок вклада в месяцах: <span class="hljs-number">1</span>
+После <span class="hljs-number">1</span> месяцев сумма вклада составит <span
+                class="hljs-number">107</span>,<span class="hljs-number">000000</span></pre>
+</div>
+    <h2>While</h2>
+    <input type="checkbox" id="4" class="del"/>
+    <label for="4" class="del">Показать решение</label>
+    <div>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-class"><span class="hljs-keyword"
+                                         style="color: rgb(167, 29, 93);">class</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">Exercise4</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword"
+                                      style="color: rgb(167, 29, 93);">public</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+            class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+            class="hljs-params">(String[] args)</span> </span>{
+
+        Scanner in = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите сумму вклада: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">float</span> sum = in.nextFloat();
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите срок вклада в месяцах: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> period = in.nextInt();
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = period;
+
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">while</span> (i &gt; <span
+                class="hljs-number">0</span>){
+            sum += sum * <span class="hljs-number">0.07</span>;
+            i--;
+        }
+        System.out.printf(<span class="hljs-string" style="color: rgb(223, 80, 0);">"После %d месяцев сумма вклада составит %f"</span>, period, sum);
+        in.close();
+    }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите сумму вклада: <span
+            class="hljs-number">100</span>
+Введите срок вклада в месяцах: <span class="hljs-number">1</span>
+После <span class="hljs-number">1</span> месяцев сумма вклада составит <span
+                class="hljs-number">107</span>,<span class="hljs-number">000000</span></pre>
+    </div>
+    <h2>Do...While</h2>
+        <input type="checkbox" id="5" class="del"/>
+        <label for="5" class="del">Показать решение</label>
+        <div>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;"><span
+            class="hljs-keyword" style="color: rgb(167, 29, 93);">import</span> java.util.Scanner;
+
+<span class="hljs-keyword" style="color: rgb(167, 29, 93);">public</span> <span
+                class="hljs-class"><span class="hljs-keyword"
+                                         style="color: rgb(167, 29, 93);">class</span> <span
+                class="hljs-title" style="color: rgb(121, 93, 163);">Exercise5</span>
+</span>{
+     <span class="hljs-function"><span class="hljs-keyword"
+                                       style="color: rgb(167, 29, 93);">public</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">static</span> <span
+             class="hljs-keyword" style="color: rgb(167, 29, 93);">void</span> <span
+             class="hljs-title" style="color: rgb(121, 93, 163);">main</span><span
+             class="hljs-params">(String[] args)</span> </span>{
+
+        Scanner in = <span class="hljs-keyword" style="color: rgb(167, 29, 93);">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите сумму вклада: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">float</span> sum = in.nextFloat();
+        System.out.print(<span class="hljs-string" style="color: rgb(223, 80, 0);">"Введите срок вклада в месяцах: "</span>);
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> period = in.nextInt();
+        <span class="hljs-keyword" style="color: rgb(167, 29, 93);">int</span> i = period;
+
+        do{
+            sum += sum * <span class="hljs-number">0.07</span>;
+            i--;
+        } <span class="hljs-keyword" style="color: rgb(167, 29, 93);">while</span> (i&lt;<span
+                class="hljs-number">0</span>);
+        System.out.printf(<span class="hljs-string" style="color: rgb(223, 80, 0);">"После %d месяцев сумма вклада составит %f"</span>, period, sum);
+        in.close();
+    }
+}</pre>
+    <p>
+        Пример вывода:
+    </p>
+    <pre class="hljs neededFont"
+         style="display: block; background: rgb(255, 255, 255); padding: 0.5em; color: rgb(51, 51, 51); overflow-x: auto;">Введите сумму вклада: <span
+            class="hljs-number">100</span>
+Введите срок вклада в месяцах: <span class="hljs-number">1</span>
+После <span class="hljs-number">1</span> месяцев сумма вклада составит <span
+                class="hljs-number">107</span>,<span class="hljs-number">000000</span></pre>
+</div>
+</body>
+</html>
